@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+		  <!-- 设置解决方案根目录相对路径 -->
+		  <SolutionRoot>$(MSBuildThisFileDirectory)..\</SolutionRoot>
+		  <!-- 设置共享库路径 -->
+		  <SharedLibPath>$(SolutionRoot)libs\</SharedLibPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector NET 8.0.33.1\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core">
+      <HintPath>C:\Users\Admin\.nuget\packages\npoi\2.7.3\lib\net8.0\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>C:\Users\Admin\.nuget\packages\npoi\2.7.3\lib\net8.0\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>C:\Users\Admin\.nuget\packages\npoi\2.7.3\lib\net8.0\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+
+	  <!-- 引用共享的 SharpZipLib -->
+	  <Reference Include="ICSharpCode.SharpZipLib">
+		  <HintPath>$(SharedLibPath)SharpZipLib\ICSharpCode.SharpZipLib.dll</HintPath>
+	  </Reference>
+	  <Reference Include="SixLabors.Fonts.dll">
+		  <HintPath>$(SharedLibPath)SixLabs\SixLabors.Fonts.dll</HintPath>
+	  </Reference>
+	
+
+  </ItemGroup>
+
+	<!-- 确保DLL被复制到输出目录 -->
+	<ItemGroup>
+		<Content Include="$(SharedLibPath)SharpZipLib\ICSharpCode.SharpZipLib.dll">
+			<Link>ICSharpCode.SharpZipLib.dll</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+
+		<Content Include="$(SharedLibPath)SixLabs\SixLabors.Fonts.dll">
+			<Link>SixLabors.Fonts.dll</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+
+</Project>

@@ -1,0 +1,25 @@
+更换主要地址为英文，以方便github操作//20250827a
+最优界面，钢蓝色输出  //20250827
+
+使用UerControl界面//20250826b~c
+重复多余程序优化 //20250826~a
+点击FormStart按钮时，去使能FormStart按钮。增加form1关闭事件，使能ormStart按钮 //20250825c
+
+增补excel的多芯格式//20250825b
+字典对数比替换文档待替换文字多，报异常。原因有的变量为null，导致异常//20250825a
+增补word的多芯格式//20250825
+
+
+Form1增加关闭按钮。SpecForm没有选参数，直接关闭时，form1执行取消代码 ////20250822
+
+待改写SpecForm为用户UI//20250815
+待写监听，高中低压界面关闭时，FormStart3个Button要Enabled = true//20250815
+增加 高中低压界面，界面改写//20250815
+
+Excel和Word输出完成//20250808
+
+Excel输出完成  //20250725
+批处理checkBox CreateExcel 20250718
+加第二画面    CreateExcel 20250706
+改名      CreateExcel 20250703a
+自动格式         CreateExcel 20250617c
